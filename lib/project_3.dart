@@ -96,7 +96,7 @@ class _AliceCareState extends State<AliceCare> {
             border: const OutlineInputBorder(),
             enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.grey, width: 2),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10),
             ),
             disabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.grey, width: 2),
