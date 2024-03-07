@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         Workout.routeName: (_) => Workout(),
         AliceCare.routeName: (_) => AliceCare(),
       },
-      initialRoute: Moody.routeName,
+      initialRoute: Workout.routeName,
     );
   }
 }
