@@ -28,110 +28,112 @@ class _MoodyState extends State<Moody> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: buildAppBar(),
-        body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 32, vertical: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Text(
-                    "Hello,",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  Text(
-                    "Sara Rose",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 12,
-              ),
-              Text(
-                "How are you feeling today ?",
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Image.asset(AppAssets.love),
-                  Image.asset(AppAssets.cool),
-                  Image.asset(AppAssets.happy),
-                  Image.asset(AppAssets.sad),
-                ],
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              Container(
-                child: Column(
+        body: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Row(
                   children: [
-                    Row(
-                      children: [
-                        Text(
-                          "Feature",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                    Text(
+                      "Hello,",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    Text(
+                      "Sara Rose",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                const Text(
+                  "How are you feeling today ?",
+                  style: TextStyle(fontSize: 16),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Image.asset(AppAssets.love),
+                    Image.asset(AppAssets.cool),
+                    Image.asset(AppAssets.happy),
+                    Image.asset(AppAssets.sad),
+                  ],
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      const Row(
+                        children: [
+                          Text(
+                            "Feature",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
                           ),
-                        ),
-                        Spacer(),
-                        Row(
-                          children: [
-                            Text(
-                              "See more",
-                              style: TextStyle(
-                                color: Colors.green,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
+                          Spacer(),
+                          Row(
+                            children: [
+                              Text(
+                                "See more",
+                                style: TextStyle(
+                                  color: Colors.green,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.green,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    SizedBox(
-                      height: 200,
-                      child: PageView.builder(
-                        controller: pageController,
-                        itemCount: frameImage.length,
-                        itemBuilder: (_, index) => Container(
-                          height: 200,
-                          margin: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: Colors.transparent,
-                            image: DecorationImage(
-                              image: AssetImage(frameImage[index]),
-                              fit: BoxFit.fill,
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.green,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      SizedBox(
+                        height: 200,
+                        child: PageView.builder(
+                          controller: pageController,
+                          itemCount: frameImage.length,
+                          itemBuilder: (_, index) => Container(
+                            height: 200,
+                            margin: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              color: Colors.transparent,
+                              image: DecorationImage(
+                                image: AssetImage(frameImage[index]),
+                                fit: BoxFit.fill,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    buildSmoothPageIndicator(),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    buildExercise(),
-                  ],
+                      buildSmoothPageIndicator(),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      buildExercise(),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: buildFlashyTabBar());
@@ -141,16 +143,16 @@ class _MoodyState extends State<Moody> {
     return FlashyTabBar(
       iconSize: 25,
       selectedIndex: _selectedIndex,
-      animationDuration: Duration(milliseconds: 300),
+      animationDuration: const Duration(milliseconds: 300),
       items: [
         FlashyTabBarItem(
-            icon: Icon(Icons.home),
-            title: Icon(Icons.home, color: Colors.green, size: 30),
+            icon: const Icon(Icons.home),
+            title: const Icon(Icons.home, color: Colors.green, size: 30),
             activeColor: Colors.green,
             inactiveColor: Colors.grey),
         FlashyTabBarItem(
-            icon: Icon(Icons.apps),
-            title: Icon(
+            icon: const Icon(Icons.apps),
+            title: const Icon(
               Icons.apps,
               color: Colors.green,
               size: 30,
@@ -158,14 +160,14 @@ class _MoodyState extends State<Moody> {
             activeColor: Colors.green,
             inactiveColor: Colors.grey),
         FlashyTabBarItem(
-            icon: Icon(Icons.calendar_today_outlined),
-            title: Icon(Icons.calendar_today_outlined,
+            icon: const Icon(Icons.calendar_today_outlined),
+            title: const Icon(Icons.calendar_today_outlined,
                 color: Colors.green, size: 30),
             activeColor: Colors.green,
             inactiveColor: Colors.grey),
         FlashyTabBarItem(
-            icon: Icon(Icons.person_2_outlined),
-            title: Icon(Icons.person_2_outlined, color: Colors.green, size: 30),
+            icon: const Icon(Icons.person_2_outlined),
+            title: const Icon(Icons.person_2_outlined, color: Colors.green, size: 30),
             activeColor: Colors.green,
             inactiveColor: Colors.grey),
       ],
@@ -180,7 +182,7 @@ class _MoodyState extends State<Moody> {
     return SmoothPageIndicator(
       controller: pageController,
       count: frameImage.length,
-      effect: WormEffect(),
+      effect: const WormEffect(),
     );
   }
 
@@ -188,7 +190,7 @@ class _MoodyState extends State<Moody> {
     return Container(
       child: Column(
         children: [
-          Row(
+          const Row(
             children: [
               Text(
                 "Exercise",
@@ -216,7 +218,7 @@ class _MoodyState extends State<Moody> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Column(
@@ -225,17 +227,17 @@ class _MoodyState extends State<Moody> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    padding: EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                        color: Color(0x66B591F5),
+                        color: const Color(0x66B591F5),
                         borderRadius: BorderRadius.circular(20)),
                     child: Row(
                       children: [
                         Image.asset(AppAssets.relaxation),
-                        SizedBox(
+                        const SizedBox(
                           width: 12,
                         ),
-                        Text(
+                        const Text(
                           "Relaxation",
                           style: TextStyle(fontSize: 15),
                         )
@@ -243,17 +245,17 @@ class _MoodyState extends State<Moody> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                        color: Color(0x66F9A6DF),
+                        color: const Color(0x66F9A6DF),
                         borderRadius: BorderRadius.circular(20)),
                     child: Row(
                       children: [
                         Image.asset(AppAssets.meditation),
-                        SizedBox(
+                        const SizedBox(
                           width: 12,
                         ),
-                        Text(
+                        const Text(
                           "Meditation",
                           style: TextStyle(fontSize: 15),
                         )
@@ -262,7 +264,7 @@ class _MoodyState extends State<Moody> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Row(
@@ -276,10 +278,10 @@ class _MoodyState extends State<Moody> {
                     child: Row(
                       children: [
                         Image.asset(AppAssets.beathing),
-                        SizedBox(
+                        const SizedBox(
                           width: 12,
                         ),
-                        Text(
+                        const Text(
                           "Beathing",
                           style: TextStyle(fontSize: 15),
                         )
@@ -287,17 +289,17 @@ class _MoodyState extends State<Moody> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+                    padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
                     decoration: BoxDecoration(
-                        color: Color(0x4D7BD3FC),
+                        color: const Color(0x4D7BD3FC),
                         borderRadius: BorderRadius.circular(20)),
                     child: Row(
                       children: [
                         Image.asset(AppAssets.yoga),
-                        SizedBox(
+                        const SizedBox(
                           width: 12,
                         ),
-                        Text(
+                        const Text(
                           "Yoga",
                           style: TextStyle(fontSize: 15),
                         )
@@ -324,11 +326,11 @@ class _MoodyState extends State<Moody> {
       ),
       title: Row(
         children: [
-          Text("Moody"),
-          Spacer(),
+          const Text("Moody"),
+          const Spacer(),
           badges.Badge(
               badgeContent: Text("${badgeCounter.toString()}"),
-              child: Icon(
+              child: const Icon(
                 Icons.notifications_none,
                 size: 30,
               )),
