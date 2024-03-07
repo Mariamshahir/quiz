@@ -5,6 +5,7 @@ import 'package:chips_choice/chips_choice.dart';
 
 class AliceCare extends StatefulWidget {
   static const String routeName = "project3";
+
   const AliceCare({Key? key}) : super(key: key);
 
   @override
@@ -26,7 +27,7 @@ class _AliceCareState extends State<AliceCare> {
           padding: const EdgeInsets.symmetric(vertical: 32),
           child: Column(
             children: [
-              SafeArea(
+              const SafeArea(
                 child: Center(
                   child: Column(
                     children: [
@@ -38,28 +39,32 @@ class _AliceCareState extends State<AliceCare> {
               buildSearch(),
               buildChipsChoice(),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 32, vertical: 15),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 32, vertical: 15),
                 child: Column(
                   children: [
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           "Hot topics",
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
                         ),
                         Spacer(),
                         Row(
                           children: [
                             Text(
                               "See all",
-                              style: TextStyle(color: Color(0xff5925DC), fontSize: 15),
+                              style: TextStyle(
+                                  color: Color(0xff5925DC), fontSize: 15),
                             ),
-                            Icon(Icons.arrow_forward_ios, color: Color(0xff5925DC)),
+                            Icon(Icons.arrow_forward_ios,
+                                color: Color(0xff5925DC)),
                           ],
                         )
                       ],
                     ),
-                    SizedBox(height: 18),
+                    const SizedBox(height: 18),
                     buildCarouselSlider(),
                   ],
                 ),
@@ -74,89 +79,92 @@ class _AliceCareState extends State<AliceCare> {
 
   Padding buildSearch() {
     return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32,vertical: 20),
-              child: Center(
-                child: TextField(
-                  enabled: true,
-                  decoration: InputDecoration(
-                    prefixIcon: IconButton(
-                      icon: const Icon(
-                        Icons.search_rounded,
-                        color: Colors.grey,
-                      ),
-                      onPressed: () {},
-                    ),
-                    hintText: "Articles, Video, Audio and More,...",
-                    hintStyle: TextStyle(color: Colors.grey, fontSize: 18),
-                    border: OutlineInputBorder(),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey, width: 2),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    disabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey, width: 2),
-                    ),
-                  ),
-
-                ),
+      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+      child: Center(
+        child: TextField(
+          enabled: true,
+          decoration: InputDecoration(
+            prefixIcon: IconButton(
+              icon: const Icon(
+                Icons.search_rounded,
+                color: Colors.grey,
               ),
-            );
+              onPressed: () {},
+            ),
+            hintText: "Articles, Video, Audio and More,...",
+            hintStyle: const TextStyle(color: Colors.grey, fontSize: 18),
+            border: const OutlineInputBorder(),
+            enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.grey, width: 2),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            disabledBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey, width: 2),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   Container buildContainerGitTips() {
     return Container(
-              padding: EdgeInsets.symmetric(horizontal: 32),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+      padding: const EdgeInsets.symmetric(horizontal: 32),
+      child: const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Get Tips",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          Image(image: AssetImage(AppAssets.frame3)),
+          SizedBox(
+            height: 24,
+          ),
+          Row(
+            children: [
+              Text(
+                "Cycle Phases and Period",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+              Spacer(),
+              Row(
                 children: [
                   Text(
-                    "Get Tips",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    "See all",
+                    style: TextStyle(color: Color(0xff5925DC), fontSize: 15),
                   ),
-                  SizedBox(height: 16,),
-                  Image(image: AssetImage(AppAssets.frame3)),
-                  SizedBox(height: 24,),
-                  Row(
-                    children: [
-                      Text(
-                        "Cycle Phases and Period",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                      ),
-                      Spacer(),
-                      Row(
-                        children: [
-                          Text(
-                            "See all",
-                            style: TextStyle(color: Color(0xff5925DC), fontSize: 15),
-                          ),
-                          Icon(Icons.arrow_forward_ios, color: Color(0xff5925DC)),
-                        ],
-                      )
-                    ],
-                  ),
+                  Icon(Icons.arrow_forward_ios, color: Color(0xff5925DC)),
                 ],
-              ),
-            );
+              )
+            ],
+          ),
+        ],
+      ),
+    );
   }
 
   CarouselSlider buildCarouselSlider() {
     return CarouselSlider(
-                    items: frames.map((frame) {
-                      return Image.asset(
-                        frame,
-                        fit: BoxFit.fill,
-                        width: 600,
-                      );
-                    }).toList(),
-                    options: CarouselOptions(
-                      height: 200,
-                      enlargeCenterPage: true,
-                      autoPlay: true,
-                      enableInfiniteScroll: true,
-                      autoPlayAnimationDuration: Duration(milliseconds: 500),
-                      viewportFraction: 0.9,
-                    ),
-                  );
+      items: frames.map((frame) {
+        return Image.asset(
+          frame,
+          fit: BoxFit.fill,
+          width: 600,
+        );
+      }).toList(),
+      options: CarouselOptions(
+        height: 200,
+        enlargeCenterPage: true,
+        autoPlay: true,
+        enableInfiniteScroll: true,
+        autoPlayAnimationDuration: const Duration(milliseconds: 500),
+        viewportFraction: 0.9,
+      ),
+    );
   }
 
   ChipsChoice<int> buildChipsChoice() {
