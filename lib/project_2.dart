@@ -149,10 +149,8 @@ class _WorkoutState extends State<Workout> {
             children: [
               Row(
                 children: [
-                  Icon(
-                    Icons.monitor_heart_outlined,
-                    color: Colors.blueGrey,
-                  ),
+                  Image(image: AssetImage(AppAssets.heart),width: 20,height: 20,),
+                  SizedBox(width: 5,),
                   Text("Heart Rate"),
                 ],
               ),
@@ -184,6 +182,7 @@ class _WorkoutState extends State<Workout> {
                     Icons.list_outlined,
                     color: Colors.blueGrey,
                   ),
+                  SizedBox(width: 5,),
                   Text("To-do"),
                 ],
               ),
@@ -215,6 +214,7 @@ class _WorkoutState extends State<Workout> {
                     Icons.local_fire_department_outlined,
                     color: Colors.blueGrey,
                   ),
+                  SizedBox(width: 5,),
                   Text("Calo"),
                 ],
               ),
